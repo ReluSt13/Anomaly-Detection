@@ -3,9 +3,9 @@ from pyod.models.knn import KNN
 from matplotlib import pyplot as plt
 from sklearn.metrics import confusion_matrix, roc_curve
 
-X_train, X_test, y_train, y_test = utils.generate_data(n_train=400, n_test=100, contamination=0.15)
+X_train, X_test, y_train, y_test = utils.generate_data(n_train=400, n_test=100, contamination=0.25)
 
-clf = KNN(contamination=0.15)
+clf = KNN(contamination=0.25)
 clf.fit(X_train)
 
 y_train_pred = clf.labels_
@@ -29,5 +29,5 @@ curve = roc_curve(y_test, y_test_pred)
 plt.plot(curve[0], curve[1])
 plt.xlabel('False Positive Rate')
 plt.ylabel('True Positive Rate')
-plt.savefig('ex2.pdf')
+plt.savefig('./ex2.pdf')
 plt.show()

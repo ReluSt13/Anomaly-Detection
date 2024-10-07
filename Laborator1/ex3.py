@@ -10,8 +10,6 @@ plt.xlabel('Index')
 plt.ylabel('Value')
 plt.show()
 
-# detect de anomalies in the dataset by using Z-scores using cholesky
-
 # z_i = (x_i - miu) / sigma
 mean = X_train.mean()
 std = X_train.std()

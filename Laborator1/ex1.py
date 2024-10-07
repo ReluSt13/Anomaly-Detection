@@ -15,5 +15,5 @@ clf.fit(X_train)
 pred = clf.labels_
 print(pred.shape)
 plt.scatter(X_train[:, 0], X_train[:, 1], c=pred)
-plt.savefig('ex1.pdf')
+plt.savefig('./ex1.pdf')
 plt.show()
