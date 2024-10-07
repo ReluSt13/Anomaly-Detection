@@ -18,12 +18,14 @@ z_scores = np.abs((X_train - mean) / std)
 
 contamination_rate = 0.1
 threshold = np.quantile(z_scores, 1 - contamination_rate)
+print("Threshold: ", threshold)
 predicted_labels = (z_scores > threshold).astype(int)
 
 plt.figure(1)
 colors = np.where(predicted_labels == 1, 'r', 'b')
 plt.scatter(range(len(X_train)), X_train, c=predicted_labels)
+plt.savefig('./ex3.pdf')
 plt.show()
 
 BA = balanced_accuracy_score(y_train, predicted_labels)
-print(BA)
+print("Balanced accuracy: ", BA)
